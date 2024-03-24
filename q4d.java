@@ -1,6 +1,6 @@
 package questions;
 
-public class DecimalToBinary {
+public class q4d {
     public static void main(String[] args) {
         int num = 10;
         String binary = convertDecimalToBinary(num);

@@ -1,9 +1,9 @@
 package questions;
 
-public final class Immutable {
+public final class q4c {
     private final int id;
 
-    public Immutable(int id) {
+    public q4c(int id) {
         this.id = id;
     }
 
@@ -12,7 +12,7 @@ public final class Immutable {
     }
 
     public static void main(String[] args) {
-        Immutable immutable = new Immutable(1);
+        q4c immutable = new q4c(1);
         System.out.println("Immutable id: " + immutable.getId());
     }
 }

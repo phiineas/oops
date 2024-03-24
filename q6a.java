@@ -1,6 +1,6 @@
 package questions;
 
-abstract class AbstractClass {
+abstract class q6a {
     abstract void method1();
     abstract void method2();
 
@@ -9,7 +9,7 @@ abstract class AbstractClass {
     }
 }
 
-class SubClass extends AbstractClass {
+class SubClass extends q6a {
     void method1() {
         System.out.println("This is method1 implementation in subclass");
     }

@@ -1,9 +1,9 @@
 package questions;
 
-public class Multiply {
+public class q4a {
     private int result;
 
-    public Multiply(int num1, int num2) {
+    public q4a(int num1, int num2) {
         this.result = num1 * num2;
     }
 
@@ -12,7 +12,7 @@ public class Multiply {
     }
 
     public static void main(String[] args) {
-        Multiply multiply = new Multiply(5, 10);
+        q4a multiply = new q4a(5, 10);
         System.out.println("The result is: " + multiply.getResult());
     }
 }

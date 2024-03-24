@@ -1,7 +1,7 @@
 package questions;
 
 import java.util.Random;
-public class PlateNumber {
+public class a4b {
     public static void main(String[] args) {
         Random rand = new Random();
         String plateNumber = "";

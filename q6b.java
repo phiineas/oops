@@ -1,11 +1,11 @@
 package questions;
 
-interface Interface {
+interface q6b {
     void method1();
     void method2();
 }
 
-class ImplementingClass implements Interface {
+class ImplementingClass implements q6b {
     public void method1() {
         System.out.println("This is method1 implementation in implementing class");
     }
