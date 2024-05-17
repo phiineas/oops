@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 import java.util.Random;
 public class a4b {

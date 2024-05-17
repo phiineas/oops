@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 interface q6b {
     void method1();

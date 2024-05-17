@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 public class q4d {
     public static void main(String[] args) {

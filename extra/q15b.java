@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

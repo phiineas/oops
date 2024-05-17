@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 public class q15c {
     public static void main(String[] args) {

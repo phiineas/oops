@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 public class q4a {
     private int result;

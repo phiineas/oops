@@ -1,4 +1,4 @@
-package questions;
+package questions.extra;
 
 abstract class q6a {
     abstract void method1();
