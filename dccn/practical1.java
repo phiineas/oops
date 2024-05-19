@@ -3,7 +3,40 @@ package questions.dccn;
 import java.util.*;
 
 public class practical1 {
-
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Enter the number of nodes in the graph:");
+        int numNodes = sc.nextInt();
+    
+        int[][] graph = new int[numNodes][numNodes];
+    
+        System.out.println("Enter the adjacency matrix for the graph (" + numNodes + "x" + numNodes + " matrix):");
+        for (int i = 0; i < numNodes; i++) {
+            for (int j = 0; j < numNodes; j++) {
+                graph[i][j] = sc.nextInt();
+            }
+        }
+    
+        System.out.println("Enter the source node:");
+        int source = sc.nextInt();
+    
+        System.out.println("Enter the destination node:");
+        int destination = sc.nextInt();
+    
+        sc.close();
+        int[] prev = new int[numNodes];
+        Arrays.fill(prev, -1);  // Initialize prev array with -1
+        int[] distances = dijkstra(graph, source, prev);
+    
+        System.out.println("Shortest distance from node " + source + " to node " + destination + ": " + distances[destination] + " \nPath: ");
+        printPath(prev, destination);
+        System.out.println();
+    
+        // int totalCost = totalCost(graph);
+        // System.out.println("The total cost of traversing the graph is: " + totalCost);
+    }
+    
     private static final int INFINITY = Integer.MAX_VALUE;
 
     // Add a new parameter for the prev array
@@ -67,47 +100,13 @@ public class practical1 {
         System.out.print("-" + target);  
     }
 
-    public static int totalCost(int[][] graph) {
-        int totalCost = 0;
-        for (int i = 0; i < graph.length; i++) {
-            for (int j = 0; j < graph[i].length; j++) {
-                totalCost += graph[i][j];
-            }
-        }
-        return totalCost;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-    
-        System.out.println("Enter the number of nodes in the graph:");
-        int numNodes = scanner.nextInt();
-    
-        int[][] graph = new int[numNodes][numNodes];
-    
-        System.out.println("Enter the adjacency matrix for the graph (" + numNodes + "x" + numNodes + " matrix):");
-        for (int i = 0; i < numNodes; i++) {
-            for (int j = 0; j < numNodes; j++) {
-                graph[i][j] = scanner.nextInt();
-            }
-        }
-    
-        System.out.println("Enter the source node:");
-        int source = scanner.nextInt();
-    
-        System.out.println("Enter the destination node:");
-        int destination = scanner.nextInt();
-    
-        scanner.close();
-        int[] prev = new int[numNodes];
-        Arrays.fill(prev, -1);  // Initialize prev array with -1
-        int[] distances = dijkstra(graph, source, prev);
-    
-        System.out.println("Shortest distance from node " + source + " to node " + destination + ": " + distances[destination] + " \nPath: ");
-        printPath(prev, destination);
-        System.out.println();
-    
-        int totalCost = totalCost(graph);
-        System.out.println("The total cost of traversing the graph is: " + totalCost);
-    }
+    // public static int totalCost(int[][] graph) {
+    //     int totalCost = 0;
+    //     for (int i = 0; i < graph.length; i++) {
+    //         for (int j = 0; j < graph[i].length; j++) {
+    //             totalCost += graph[i][j];
+    //         }
+    //     }
+    //     return totalCost;
+    // }
 }

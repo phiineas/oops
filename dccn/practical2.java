@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class practical2 {
     public static void main(String[] args) {
-        System.out.println("Enter the string: ");
         Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter the string: ");
         String data = sc.nextLine();
         sc.close();
         int[] ascii = Ascii(data);

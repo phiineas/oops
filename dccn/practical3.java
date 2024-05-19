@@ -4,22 +4,23 @@ import java.util.Scanner;
 
 public class practical3 {
     public static void main(String[] args) {
-        System.out.println("Enter the data bits: ");
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the data bits: "); // 10110011
         String data = sc.nextLine();
-        // String data = "10110011";
-        System.out.println("Enter the divisor: ");
+
+        System.out.println("Enter the divisor: "); // 10011
         String divisor = sc.nextLine();
-        // String divisor = "10011";
+
         System.out.println("Enter the transmitted data: ");
         String transmittedData = sc.nextLine();
+
         sc.close();
+        
         receiver(transmittedData, divisor);
         for(int i=0 ; i<divisor.length()-1 ; i++) {
             data = data + "0";
         }
-        // System.out.println(data);
-        // System.out.println(divisor);
         String remainder = xor(data, divisor);
         System.out.println("CRC output: " +remainder);
     }
