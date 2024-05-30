@@ -57,9 +57,9 @@ class Student {
     public void searchByName(String name) {
         for(Student student : students) {
             if(student.getStudentName().equals(name)) {
-                System.out.println("studentId : " + student.getStudentId() + " courses: ");
+                System.out.println("studentId: " + student.getStudentId() + "\nstudent name: " + student.getStudentName());
                 for(Course course : student.getCourses()) {
-                    System.out.println(course.getCourseName());
+                    System.out.println("courses: " + course.getCourseName());
                 }
             }
         }
@@ -68,9 +68,9 @@ class Student {
     public void searchById(int id) {
         for(Student student : students) {
             if(student.getStudentId() == id) {
-                System.out.println("student name : " + student.getStudentName() + " courses : ");
+                System.out.println("studentId: " + student.getStudentId() + "\nstudent name: " + student.getStudentName());
                 for(Course course : student.getCourses()) {
-                    System.out.println(course.getCourseName());
+                    System.out.println("courses: " + course.getCourseName());
                 }
             }
         }
