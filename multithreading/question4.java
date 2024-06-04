@@ -25,7 +25,7 @@ public class question4 {
         Runnable r1 = new Runnable() {
             public void run() {
                 for(int i = 0; i < numbers.size(); i++) {
-                    System.out.println("Thread 1 is currently comparing these: " + numbers.get(i) + " and the min for this thread is: "+ min[0]);
+                    System.out.println("Thread 1 is currently comparing with: " + numbers.get(i) + " and the min for this thread is: "+ min[0]);
                     if(numbers.get(i) < min[0]) {
                         min[0] = numbers.get(i);
                         System.out.println("The updated max value in Thread 1 is: " + min[0]);
@@ -37,7 +37,7 @@ public class question4 {
         Runnable r2 = new Runnable() {
             public void run() {
                 for(int i = 0; i < numbers.size(); i++) {
-                    System.out.println("Thread 2 is currently comparing these: " + numbers.get(i) + " and the max for this thread is: "+ max[0]);
+                    System.out.println("Thread 2 is currently comparing with: " + numbers.get(i) + " and the max for this thread is: "+ max[0]);
                     if(numbers.get(i) > max[0]) {
                         max[0] = numbers.get(i);
                         System.out.println("The updated max value in Thread 2 is: " + max[0]);

@@ -26,7 +26,7 @@ public class question2 {
         Runnable r1 = new Runnable() {
             public void run() {
                 for(int i = 0; i < numbers.size() / 3; i++) {
-                    System.out.println("Thread 1 is currently comparing these: " + numbers.get(i) + " and the min for this thread is: "+ min1[0]);
+                    System.out.println("Thread 1 is currently comparing with: " + numbers.get(i) + " and the min for this thread is: "+ min1[0]);
                     if(numbers.get(i) < min1[0]) {
                         min1[0] = numbers.get(i);
                         System.out.println("The updated min value in Thread 1 is: " + min1[0]);
@@ -38,7 +38,7 @@ public class question2 {
         Runnable r2 = new Runnable() {
             public void run() {
                 for(int i = numbers.size() / 3; i < 2 * numbers.size() / 3; i++) {
-                    System.out.println("Thread 2 is currently comparing these: " + numbers.get(i) + " and the min for this thread is: "+ min2[0]);
+                    System.out.println("Thread 2 is currently comparing with: " + numbers.get(i) + " and the min for this thread is: "+ min2[0]);
                     if(numbers.get(i) < min2[0]) {
                         min2[0] = numbers.get(i);
                         System.out.println("The updated min value in Thread 2 is: " + min2[0]);
@@ -54,7 +54,7 @@ public class question2 {
         t2.start();
 
         for(int i = 2 * numbers.size() / 3; i < numbers.size(); i++) {
-            System.out.println("Main Thread is currently comparing these: " + numbers.get(i) + " and the min for this thread is: "+ min);
+            System.out.println("Main Thread is currently comparing with: " + numbers.get(i) + " and the min for this thread is: "+ min);
             if(numbers.get(i) < min) {
                 min = numbers.get(i);
                 System.out.println("The updated min value in Main Thread is: " + min);
