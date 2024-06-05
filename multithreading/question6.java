@@ -3,6 +3,37 @@ package questions.multithreading;
 import java.util.ArrayList;
 import java.util.List;
 
+public class question6 {
+    public static void main(String[] args) throws InterruptedException {
+        List<Student> students = new ArrayList<>();
+
+        for (int i = 1; i <= 30; i++) {
+            Student student = new Student(i);
+            student.addCourse(new Course("MATH", (int) (Math.random() * 100)));
+            student.addCourse(new Course("OOPS", (int) (Math.random() * 100)));
+            student.addCourse(new Course("OS", (int) (Math.random() * 100)));
+            students.add(student);
+        }
+
+        Thread t1 = new Thread(new AverageMarks(students.subList(0, 10)));
+        Thread t2 = new Thread(new AverageMarks(students.subList(10, 20)));
+        Thread t3 = new Thread(new AverageMarks(students.subList(20, 30)));
+
+        t1.start();
+        t2.start();
+        t3.start();
+
+        try {
+            t1.join();
+            t2.join();
+            t3.join();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+
 class Course {
     String name;
     int marks;
@@ -48,36 +79,5 @@ class AverageMarks implements Runnable {
             double average = student.calculateAverage();
             System.out.println("studentId: " + student.id + "\nAverage Marks: " + average);
         }
-    }
-}
-
-public class question6 {
-    public static void main(String[] args) throws InterruptedException {
-        List<Student> students = new ArrayList<>();
-
-        for (int i = 1; i <= 30; i++) {
-            Student student = new Student(i);
-            student.addCourse(new Course("MATH", (int) (Math.random() * 100)));
-            student.addCourse(new Course("OOPS", (int) (Math.random() * 100)));
-            student.addCourse(new Course("OS", (int) (Math.random() * 100)));
-            students.add(student);
-        }
-
-        Thread t1 = new Thread(new AverageMarks(students.subList(0, 10)));
-        Thread t2 = new Thread(new AverageMarks(students.subList(10, 20)));
-        Thread t3 = new Thread(new AverageMarks(students.subList(20, 30)));
-
-        t1.start();
-        t2.start();
-        t3.start();
-
-        try {
-            t1.join();
-            t2.join();
-            t3.join();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }
