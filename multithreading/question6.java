@@ -18,11 +18,11 @@ class Course {
 }
 
 class Student {
-    String name;
+    int id;
     List<Course> courses;
 
-    public Student(String name) {
-        this.name = name;
+    public Student(int id) {
+        this.id = id;
         this.courses = new ArrayList<>();
     }
 
@@ -46,7 +46,7 @@ class AverageMarks implements Runnable {
     public void run() {
         for (Student student : students) {
             double average = student.calculateAverage();
-            System.out.println("Student: " + student.name + ", Average Marks: " + average);
+            System.out.println("studentId: " + student.id + "\nAverage Marks: " + average);
         }
     }
 }
@@ -56,7 +56,7 @@ public class question6 {
         List<Student> students = new ArrayList<>();
 
         for (int i = 1; i <= 30; i++) {
-            Student student = new Student("Student " + i);
+            Student student = new Student(i);
             student.addCourse(new Course("MATH", (int) (Math.random() * 100)));
             student.addCourse(new Course("OOPS", (int) (Math.random() * 100)));
             student.addCourse(new Course("OS", (int) (Math.random() * 100)));
@@ -78,6 +78,6 @@ public class question6 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 }

@@ -7,8 +7,8 @@ import java.util.Map;
 
 public class question5 {
     public static void main(String[] args) {
-        Course c1 = new Course("OOPS", 10, 100);
-        Course c2 = new Course("MATH", 11, 100);
+        Course c1 = new Course("OOPS", 4, 100);
+        Course c2 = new Course("MATH", 5, 100);
 
         Map<String, Student> students = new HashMap<>();
         
